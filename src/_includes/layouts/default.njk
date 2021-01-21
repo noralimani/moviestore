@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ site.title }}
+            -
+            {{ site.description | safe }}</title>
+        <meta name="title" content="{{ site.title }} - {{ site.description | safe }}">
+        <meta name="description" content="{{ site.description | safe }}">
+        {%- for keyword in site.keywords -%}
+            <meta name="keywords" content="{{ keyword }}{%- if not loop.last %},{% endif -%}">
+        {%- endfor -%}
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+        <link rel="stylesheet" href="/assets/css/bootstrap.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
+
+        <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.27/default/snipcart.css"/>
+        <script async="async" src="https://cdn.snipcart.com/themes/v3.0.27/default/snipcart.js"></script>
+        <div id="snipcart" data-config-modal-style="side" data-api-key="MDRlNmY4MmQtOWJjNi00NDI0LWE2NWYtMzFhODcyZTlmNzdmNjM3NDY2OTk0MzIzMTYwNjg1" hidden="hidden"></div>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="container_wrap">
+                {% include "partials/header.njk" %}
+
+                {# Content #}
+                {{ content | safe }}
+            </div>
+        </div>
+
+        {# Footer #}
+        {% include "partials/footer.njk" %}
+    </body>
+
+</html>

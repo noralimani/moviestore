@@ -1,0 +1,21 @@
+{
+	"name": "movie",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"clean": "rimraf dist",
+		"start": "npm run clean && cross-env NODE_ENV=development npx @11ty/eleventy --serve --config eleventy.config.js",
+		"build": "npm run clean && cross-env NODE_ENV=production npx @11ty/eleventy --config eleventy.config.js",
+		"debug": "DEBUG=Eleventy* npm run build"
+	},
+	"author": "Nora",
+	"license": "MIT",
+	"devDependencies": {
+		"@11ty/eleventy": "^0.11.0",
+		"contentful": "^8.1.7",
+		"cross-env": "^7.0.2",
+		"dotenv": "^8.2.0",
+		"rimraf": "^3.0.2"
+	},
+	"dependencies": {}
+}

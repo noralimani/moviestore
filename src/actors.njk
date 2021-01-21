@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class="content">
+    <h2 class="m_3">
+        Actors!
+    </h2>
+    <div class="movie_top">
+        {% for actor in actors -%}
+            <div class="col-md-3">
+                <div class="movie_img">
+                    <div class="grid_2">
+                        <img alt="{{ actor.fields.image.fields.title }}" src="{{ actor.fields.image.fields.file.url }}?fit=fill&w=250&h=400" class="img-responsive">
+                        <div class="caption1">
+                            <p class="m_3">
+                                {{ actor.fields.name }}
+                                {{ actor.fields.surname }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {%- endfor %}
+        <div class="clearfix"></div>
+    </div>
+</div>
